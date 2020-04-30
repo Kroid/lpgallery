@@ -1,53 +1,28 @@
 <template>
-  <div class="container">
+  <Layout>
     <h1 class="text-center">
       {{ $page.landing.id }}
     </h1>
     <div class="thumbnail-container">
       <div class="thumbnail thumbnail-1366x768">
-        <div class="text-center modal-resolution">1366x768</div>
-        <img
-          class=""
-          :src="thumbnailUrl($page.landing.id, '1366x768')"
-          alt=""
-          @click="show($page.landing.id, '1366x768')"
-        />
+        <div class="text-center resolution">1366x768</div>
+        <g-image :src="thumbnailUrl($page.landing.id, '1366x768')" @click="show($page.landing.id, '1366x768')" />
       </div>
       <div class="thumbnail thumbnail-360x640">
-        <div class="text-center modal-resolution">360x640</div>
-        <img
-          class=""
-          :src="thumbnailUrl($page.landing.id, '360x640')"
-          alt=""
-          @click="show($page.landing.id, '360x640')"
-        />
+        <div class="text-center resolution">360x640</div>
+        <g-image :src="thumbnailUrl($page.landing.id, '360x640')" @click="show($page.landing.id, '360x640')" />
       </div>
       <div class="thumbnail thumbnail-768x1024">
-        <div class="text-center modal-resolution">768x1024</div>
-        <img
-          class=""
-          :src="thumbnailUrl($page.landing.id, '768x1024')"
-          alt=""
-          @click="show($page.landing.id, '768x1024')"
-        />
+        <div class="text-center resolution">768x1024</div>
+        <g-image :src="thumbnailUrl($page.landing.id, '768x1024')" @click="show($page.landing.id, '768x1024')" />
       </div>
       <div class="thumbnail thumbnail-1024x1366">
-        <div class="text-center modal-resolution">1024x1366</div>
-        <img
-          class=""
-          :src="thumbnailUrl($page.landing.id, '1024x1366')"
-          alt=""
-          @click="show($page.landing.id, '1024x1366')"
-        />
+        <div class="text-center resolution">1024x1366</div>
+        <g-image :src="thumbnailUrl($page.landing.id, '1024x1366')" @click="show($page.landing.id, '1024x1366')" />
       </div>
       <div class="thumbnail thumbnail-1920x1080">
-        <div class="text-center modal-resolution">1920x1080</div>
-        <img
-          class=""
-          :src="thumbnailUrl($page.landing.id, '1920x1080')"
-          alt=""
-          @click="show($page.landing.id, '1920x1080')"
-        />
+        <div class="text-center resolution">1920x1080</div>
+        <g-image :src="thumbnailUrl($page.landing.id, '1920x1080')" @click="show($page.landing.id, '1920x1080')" />
       </div>
     </div>
 
@@ -56,13 +31,13 @@
         <div class="text-center modal-resolution">
           {{ modal.resolution }}
         </div>
-        <img class="max-width-100 pointer" :src="fullUrl(modal.landing, modal.resolution)" alt="" />
+        <g-image class="max-width-100 pointer" :src="fullUrl(modal.landing, modal.resolution)" alt="" />
         <div class="text-center modal-resolution">
           {{ modal.resolution }}
         </div>
       </figure>
     </modal>
-  </div>
+  </Layout>
 </template>
 
 <page-query>
@@ -125,12 +100,21 @@ export default {
 
 <style lang="scss" scoped>
 h1 {
-  font-variant: small-caps;
-  // text-transform: uppercase;
+  // font-variant: small-caps;
+  margin-bottom: 1rem;
+}
+
+.resolution {
+  // color: #fff;
+  color: #363636;
+  font-size: 120%;
+  // background: #02020294;
+  padding: 10px;
 }
 
 .modal-resolution {
   color: #fff;
+  // color: #363636;
   font-size: 120%;
   background: #02020294;
   padding: 10px;
@@ -146,6 +130,7 @@ h1 {
 .thumbnail {
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border: 1px solid #dadada;
 }
 
 .thumbnail img {

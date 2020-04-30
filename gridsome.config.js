@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Gridsome',
+  siteName: 'Landing Page Gallery',
   plugins: [
     {
       use: '@gridsome/source-filesystem',
@@ -19,6 +19,12 @@ module.exports = {
       options: {
         typeName: 'Resolutions',
         path: './data/resolutions/*.yml',
+      },
+    },
+    {
+      use: '@gridsome/plugin-google-analytics',
+      options: {
+        id: 'UA-159141183-2',
       },
     },
   ],

@@ -2,6 +2,7 @@
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
 import VueThinModal from 'vue-thin-modal'
+import '~/styles/global.scss'
 import '~/styles/utils.scss'
 import '~/styles/modal.scss'
 
