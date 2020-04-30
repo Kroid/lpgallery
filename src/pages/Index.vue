@@ -25,9 +25,6 @@ query {
 
 <script>
 export default {
-  metaInfo: {
-    title: 'Hello, world!',
-  },
   methods: {
     thumbnailUrl(landingId, resolution) {
       return `/landings/${landingId}/${resolution}-cropped.png`
