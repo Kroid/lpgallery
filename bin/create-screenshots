@@ -1,0 +1,45 @@
+#!/usr/bin/env node
+
+const fs = require('fs')
+const path = require('path')
+const url = require('url')
+const YAML = require('yaml')
+const Pageres = require('pageres')
+const resolutions = [[360, 640], [768, 1024], [1024, 1366], [1366, 768], [1920, 1080]]
+
+let inputUrl = process.argv[2]
+if (!inputUrl) {
+  console.error('Usage: "./bin/create-screenshots https://google.com"')
+  process.exit(1)
+}
+
+inputUrl = url.parse(inputUrl)
+if (!inputUrl.protocol) {
+  inputUrl = url.parse(`https://${url.format(inputUrl)}`)
+}
+
+const domain = inputUrl.hostname.split('.')[0]
+
+const saveTo = path.resolve(__dirname, '..', 'static/landings', domain)
+fs.mkdirSync(saveTo, { recursive: true })
+
+const dataFile = path.resolve(__dirname, '..', `data/landings/${domain}.yml`)
+
+filename = '<%= size %><%= crop %>'
+
+new Pageres({ delay: 2 })
+  .src(inputUrl.href, resolutions.map(arr => `${arr[0]}x${arr[1]}`), { crop: true, filename })
+  .src(inputUrl.href, resolutions.map(arr => `${arr[0]}x${arr[1]}`), { filename })
+  .dest(saveTo)
+  .run()
+  .then(() => {
+    data = YAML.stringify({
+      id: domain,
+      url: inputUrl.host,
+      date: new Date(),
+    })
+    fs.writeFileSync(dataFile, data)
+  })
+  .then(() => {
+    console.log('Finished generating screenshots!')
+  })

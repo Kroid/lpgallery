@@ -13,7 +13,7 @@
 
 <page-query>
 query {
-  landings: allLanding {
+  landings: allLanding(sortBy: "date", order: DESC) {
     edges {
       node {
         id
