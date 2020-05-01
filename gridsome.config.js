@@ -6,8 +6,8 @@
 
 module.exports = {
   siteName: 'Landing Page Gallery',
-  siteUrl: 'https://lpgallery.xyz/',
-  pathPrefix: '/lpgallery',
+  siteUrl: 'lpgallery.xyz',
+  // pathPrefix: '/',
   plugins: [
     {
       use: '@gridsome/source-filesystem',

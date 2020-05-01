@@ -9,7 +9,7 @@ const resolutions = [[360, 640], [768, 1024], [1024, 1366], [1366, 768], [1920, 
 
 let inputUrl = process.argv[2]
 if (!inputUrl) {
-  console.error('Usage: "./bin/create-screenshots https://google.com"')
+  console.error('Usage: "./bin/create-screenshots https://google.com" google')
   process.exit(1)
 }
 
@@ -18,7 +18,7 @@ if (!inputUrl.protocol) {
   inputUrl = url.parse(`https://${url.format(inputUrl)}`)
 }
 
-const domain = inputUrl.hostname.split('.')[0]
+const domain = process.argv[3] || inputUrl.hostname.split('.')[0]
 
 const saveTo = path.resolve(__dirname, '..', 'static/landings', domain)
 fs.mkdirSync(saveTo, { recursive: true })
