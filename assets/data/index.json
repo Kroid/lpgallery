@@ -1,1 +1,1 @@
-{"hash":"415eb61782934f338d37859855b1d902e312788e","data":{"landings":{"edges":[{"node":{"id":"airtable"}},{"node":{"id":"notion"}},{"node":{"id":"stripe"}}]}},"context":{}}
+{"hash":"415eb61782934f338d37859855b1d902e312788e","data":{"landings":{"edges":[{"node":{"id":"vercel"}},{"node":{"id":"netlify"}},{"node":{"id":"upcloud"}},{"node":{"id":"google-cloud"}},{"node":{"id":"microsoft-azure"}},{"node":{"id":"amazon-aws"}},{"node":{"id":"linode"}},{"node":{"id":"digitalocean"}},{"node":{"id":"airtable"}},{"node":{"id":"notion"}},{"node":{"id":"stripe"}}]}},"context":{}}
