@@ -5,7 +5,8 @@
     "build": "gridsome build",
     "develop": "gridsome develop",
     "explore": "gridsome explore",
-    "predeploy": "npm run build",
+    "add-domain": "echo \"lpgallery.xyz\" > dist/CNAME",
+    "predeploy": "yarn build && yarn add-domain",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
