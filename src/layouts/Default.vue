@@ -17,6 +17,10 @@
 
     <div>
       <mailchimp-form></mailchimp-form>
+      <p class="text-center">
+        Do you have any questions?
+        <a href="/feedback">Contact me</a>
+      </p>
     </div>
 
     <footer class="text-center">
