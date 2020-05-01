@@ -15,6 +15,10 @@
     </header>
     <slot />
 
+    <div>
+      <mailchimp-form></mailchimp-form>
+    </div>
+
     <footer class="text-center">
       © 2020
       <g-link to="/">{{ $static.metadata.siteName }}</g-link>
@@ -29,6 +33,15 @@ query {
   }
 }
 </static-query>
+
+<script>
+import mailchimpForm from '@/components/mailchimp-form'
+export default {
+  components: {
+    mailchimpForm,
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 header {
