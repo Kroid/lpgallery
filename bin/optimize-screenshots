@@ -6,4 +6,4 @@ if [ $# -eq 0 ]
     exit 1
 fi
 
-pngquant --quality 60-80 --ext .png -f static/landings/$1/*.png
+pngquant --quality 80 --ext .png -f static/landings/$1/*.png

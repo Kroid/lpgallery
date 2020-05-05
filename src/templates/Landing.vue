@@ -1,7 +1,8 @@
 <template>
   <Layout>
     <h1 class="text-center">
-      {{ $page.landing.id }}
+      <!-- {{ $page.landing.id }} -->
+      <a :href="'https://' + $page.landing.url" target="_blank">{{ $page.landing.id }}</a>
     </h1>
     <div class="thumbnail-container">
       <div class="thumbnail thumbnail-1366x768">
